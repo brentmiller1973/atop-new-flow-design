@@ -1037,7 +1037,7 @@
                                         <div class="font-bold mb-4">1. Instructions</div>
                                         <ul class="list-disc ml-6">
                                             <li>Ask caller to get their ID.</li>
-                                            <li><label 
+                                            <li><label
                                                        for="trusonafication_document_type">Select ID Type:</label></li>
                                         </ul>
                                     </li>
@@ -1085,51 +1085,9 @@
                         <section class="break-words">
                             <div class="flex flex-col flex-auto items-start mb-8">
                                 <div style="position: relative">
-                                    <div class="font-bold mb-4" id="trusonaifyVia" style="cursor: pointer">2. Trusonafy
+                                    <div class="font-bold mb-4" id="trusonaifyVia">2. Trusonafy
                                         Via
                                     </div>
-                                    <div id="tooltip-link">
-                                        <span
-                                                class="tooltiptext"
-                                                style="
-                                                visibility: hidden;
-                                                opacity: 0;
-                                                width: 200px;
-                                                background-color: rgb(51, 51, 51);
-                                                color: rgb(255, 255, 255);
-                                                text-align: center;
-                                                padding: 0.5rem;
-                                                border-radius: 4px;
-                                                font-size: 14px;
-                                                box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
-                                                position: absolute;
-                                                z-index: 1;
-                                                bottom: 125%;
-                                                left: 50%;
-                                                transform: translateX(-50%);
-                                                transition: opacity 0.3s, visibility 0.3s;
-                                            "
-                                        >
-                                            https://brent.staging.trusonasandbox.com/identity/verifications/c4adf709-2140-4c50-b053-eb0edfd695cd
-                                            <span style="content: ''; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #333 transparent transparent transparent;"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <script>
-                                    const hoverElement = document.getElementById('trusonaifyVia');
-                                    const hiddenElement = document.getElementById('tooltip-link');
-
-                                    hoverElement.addEventListener('mouseover', () => {
-                                        hiddenElement.style.visibility = 'visible';
-                                        hiddenElement.style.opacity = '0';
-                                    });
-
-                                    hoverElement.addEventListener('mouseout', () => {
-                                        hiddenElement.style.visibility = 'hidden';
-                                        hiddenElement.style.opacity = '1';
-
-                                    });
-                                </script>
                                 <div class="hidden" id="agent-link">
                                     https://brent.staging.trusonasandbox.com/identity/verifications/fc9dab97-6d4c-48b0-89aa-c9b18e73a58f
                                 </div>
@@ -1555,6 +1513,58 @@
             <span class="flip-header" style="padding-left: 10px;">Time remaining:</span>
             <span class="text-base" data-controller="countdown-timer"
                   data-countdown-timer-seconds-value="412" data-countdown-timer-target="display">06:26</span>
+            <div style="display: inline-block; margin-left: 1rem; position: relative">
+                <span style="cursor: pointer;  font-weight: bold" id="viewLink">View link</span>
+                <div id="tooltip-link-view">
+                    <span class="tooltiptext"
+                            style="
+                        visibility: hidden;
+                        opacity: 0;
+                        width: 200px;
+                        background-color: rgb(51, 51, 51);
+                        color: rgb(255, 255, 255);
+                        text-align: center;
+                        padding: 0.5rem;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+                        position: absolute;
+                        z-index: 1;
+                        bottom: 125%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: fit-content;
+                        transition: opacity 0.3s, visibility 0.3s;">
+                      https://brent.staging.trusonasandbox.com/identity/verifications/c4adf709-2140-4c50-b053-eb0edfd695cd
+                      <span style="
+                          content: '';
+                          position: absolute;
+                          top: 100%;
+                          left: 50%;
+                          margin-left: -5px;
+                          border-width: 5px;
+                          border-style: solid;
+                          border-color: #333 transparent transparent transparent;
+                        "></span>
+                    </span>
+                </div>
+            </div>
+
+            <script>
+                const hoverElement = document.getElementById('viewLink');
+                const tooltipElement = document.querySelector('#tooltip-link-view .tooltiptext');
+
+                hoverElement.addEventListener('mouseover', () => {
+                    tooltipElement.style.visibility = 'visible';
+                    tooltipElement.style.opacity = '1';
+                });
+
+                hoverElement.addEventListener('mouseout', () => {
+                    tooltipElement.style.visibility = 'hidden';
+                    tooltipElement.style.opacity = '0';
+                });
+            </script>
+
 
         </div>
 
@@ -2200,4 +2210,3 @@
 
 </body>
 </html>
-
