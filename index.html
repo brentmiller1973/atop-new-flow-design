@@ -1007,7 +1007,7 @@
             }
 
             .content.expanded {
-                max-height: 500px; /* Set to a value greater than your content’s max height */
+                max-height: 775px; /* Set to a value greater than your content’s max height */
             }
 
             #expandable-content {
@@ -1031,14 +1031,17 @@
                     <div class="mt-6">
 
                         <div class="flex justify-between items-start gap-6 flex-wrap">
-                            <div class="w-full md:w-1/2">
+                            <div class="w-full md:w-1/2 mt-8">
                                 <ol class="list-decimal">
                                     <li>
-                                        <div class="font-bold mb-4">1. Instructions</div>
+                                        <div class="font-bold mb-4">1. Ask caller to get their ID.</div>
                                         <ul class="list-disc ml-6">
-                                            <li>Ask caller to get their ID.</li>
-                                            <li><label
-                                                       for="trusonafication_document_type">Select ID Type:</label></li>
+                                            <li style="max-width: 450px;">Inform caller that NONE of their personally
+                                                identifiable information (PII) will be stored.
+                                            </li>
+                                            <li>
+                                                <label
+                                                        for="trusonafication_document_type">Select ID Type:</label></li>
                                         </ul>
                                     </li>
                                 </ol>
@@ -1054,18 +1057,11 @@
                                         <option value="PASSPORT">Passport</option>
                                     </select>
                                 </fieldset>
-                                <ol class="list-decimal">
-                                    <li>
-                                        <ul class="list-disc ml-6 mt-1">
-                                            <li style="max-width: 450px;">Inform caller that NO personally identifiable information (PII) will be stored.
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ol>
+
                             </div>
                             <div class="w-full md:w-1/2 mt-8" style="display: contents;">
                                 <iframe
-                                        style="width:500px;"
+                                        style="width:420px;"
                                         allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                                         class="iframe-atop-help"
                                         frameborder="0"
@@ -1084,9 +1080,7 @@
                         <section class="break-words">
                             <div class="flex flex-col flex-auto items-start mb-8">
                                 <div style="position: relative">
-                                    <div class="font-bold mb-4" id="trusonaifyVia">2. Trusonafy
-                                        Via
-                                    </div>
+                                    <div class="font-bold mb-4" id="trusonaifyVia">2. Trusonafy</div>
                                 <div class="hidden" id="agent-link">
                                     https://brent.staging.trusonasandbox.com/identity/verifications/fc9dab97-6d4c-48b0-89aa-c9b18e73a58f
                                 </div>
@@ -1097,7 +1091,7 @@
                                             onmouseover="this.querySelector('.tooltiptext').style.visibility='visible'; this.querySelector('.tooltiptext').style.opacity='1';"
                                             style="position: relative; display: inline-block;"
                                     >
-                                        <div class="flex-shrink-0 ml-4">
+                                        <div class="flex-shrink-0 ml-0 md:ml-4">
                                             <form action="/atop/trusonafications/fc9dab97-6d4c-48b0-89aa-c9b18e73a58f" class="button_to"
                                                   method="post">
                                                 <input autocomplete="off" name="_method" type="hidden" value="put"/>
@@ -1116,7 +1110,7 @@
                                                     </svg>
                                                 </turbo-frame>
                                             </span>
-                                                    SMS
+                                                    Trusonafy via SMS
                                                 </button>
                                                 <script>
                                                     document.getElementById('sendSMSBtn').addEventListener('click', () => {
@@ -1185,7 +1179,7 @@
                                                 </svg>
                                             </turbo-frame>
                                         </span>
-                                                Email
+                                                Trusonafy via Email
                                             </button>
                                             <script>
                                                 document.getElementById('sendEmailBtn2').addEventListener('click', () => {
@@ -1513,7 +1507,7 @@
             <span class="text-base" data-controller="countdown-timer"
                   data-countdown-timer-seconds-value="412" data-countdown-timer-target="display">06:26</span>
             <div style="display: inline-block; margin-left: 1rem; position: relative">
-                <span style="cursor: pointer;  font-weight: bold" id="viewLink">View link</span>
+                <span style="cursor: pointer;  font-weight: bold" id="viewLink">View Trusonafy Link</span>
                 <div id="tooltip-link-view">
                     <span class="tooltiptext"
                             style="
@@ -2209,3 +2203,4 @@
 
 </body>
 </html>
+
