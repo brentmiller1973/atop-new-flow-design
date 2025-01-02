@@ -872,8 +872,8 @@
 <div class="flex flex-col flex-1 pt-6 p-5 md:p-10 md:pt-20" id="application-main-wrapper">
     <main class="pt-12 md:pl-64" data-action="click-&gt;nav#closeFlyoutMenu" data-nav-target="main" style="position: relative;">
         <div class="flex justify-between items-center mb-6">
-                    <span class="font-sofia font-normal text-xl sm:text-2xl text-secure">
-                        ATO Protect - New Trusonafication
+                    <span id="ato-app-title" class="font-sofia font-normal text-xl sm:text-2xl text-secure">
+                        ATO Protect
                     </span>
             <div class="flex flex-wrap gap-2">
                 <turbo-frame id="new_trusonafication_link">
@@ -937,7 +937,7 @@
                                     divTwo.style.cssText = "";
                                     document.getElementById('statusDiv').classList.toggle('active')
 
-
+                                    updateHeaderAndPageTitle()
                                     const sendSMSBtn = document.getElementById('sendSMSBtn');
                                     const sendEmailBtn2 = document.getElementById('sendEmailBtn2');
                                     sendSMSBtn.disabled = false;
@@ -1036,7 +1036,7 @@
                                     <li>
                                         <div class="font-bold mb-4">1. Ask caller to get their ID.</div>
                                         <ul class="list-disc ml-6">
-                                            <li style="max-width: 450px;">Inform caller that NONE of their personally
+                                            <li style="max-width: 565px;margin-bottom: 1rem">Inform caller that NONE of their personally
                                                 identifiable information (PII) will be stored.
                                             </li>
                                             <li>
@@ -1261,10 +1261,11 @@
                                                 setTimeout(() => {
                                                     const divThree = document.getElementById('div-three');
                                                     divThree.classList.add('active');
-
+                                                    updateHeaderAndPageTitle('9573')
                                                     document.querySelector(".toggle-button").click();
 
                                                     setTimeout(() => {
+
                                                         const divFour = document.getElementById('div-four');
                                                         divFour.classList.add('active');
                                                     }, 3000);
@@ -1366,6 +1367,8 @@
                                         const divThree = document.getElementById('div-three');
                                         divThree.classList.add('active');
 
+                                        updateHeaderAndPageTitle('9573')
+
                                         document.querySelector(".toggle-button").click();
 
                                         setTimeout(()=>{
@@ -1441,7 +1444,7 @@
                                     setTimeout(()=>{
                                         const divThree = document.getElementById('div-three');
                                         divThree.classList.add('active');
-
+                                        updateHeaderAndPageTitle('9573')
                                         document.querySelector(".toggle-button").click();
 
                                         setTimeout(()=>{
@@ -1528,7 +1531,7 @@
                         transform: translateX(-50%);
                         width: fit-content;
                         transition: opacity 0.3s, visibility 0.3s;">
-                      https://brent.staging.trusonasandbox.com/identity/verifications/c4adf709-2140-4c50-b053-eb0edfd695cd
+                      https://brent.staging.trusonasandbox.com/identity/verifications/c4adf709-2140-4c50-b053-eb0edfd69573
                       <span style="
                           content: '';
                           position: absolute;
@@ -2187,6 +2190,22 @@
         </div>
     </main>
 </div>
+
+<script>
+    const originalPageTitle = document.title
+    const updateHeaderAndPageTitle = (id) => {
+        const appTitle = document.getElementById('ato-app-title')
+        const appText = 'ATO Protect'
+
+        if(id){
+            appTitle.innerText = `${appText}: ${id}...`
+            document.title = `${appText}: ${id}...`
+        } else {
+            appTitle.innerText = appText
+            document.title = originalPageTitle
+        }
+    }
+</script>
 
 </div>
 
