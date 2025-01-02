@@ -1668,10 +1668,35 @@
                         </div>
 
                         <table class="pb-10 mt-2">
-                            <tbody></tbody>
+                            <tbody>
+                            <tr>
+                                <td><label class="pr-5 font-bold">Name:</label></td>
+                                <td>DOE-T**********</td>
+                            </tr>
+
+                            <tr>
+                                <td><label class="pr-5 font-bold">Date of Birth:</label></td>
+                                <td>04/30**********</td>
+                            </tr>
+
+                            <tr>
+                                <td><label class="pr-5 font-bold">Address:</label></td>
+                                <td>2314 **********</td>
+                            </tr>
+
+                            <tr>
+                                <td><label class="pr-5 font-bold">Country:</label></td>
+                                <td>UNITE**********</td>
+                            </tr>
+                            </tbody>
                         </table>
 
-                        <div class="flex gap-2 mt-5 w-fit-content mb-1 mr-2"></div>
+                        <div class="flex gap-2 mt-5 w-fit-content mb-1 mr-2">
+                            <button id="hideDataBtn" class="atop-btn-white" role="button" tabindex="0" aria-pressed="false" aria-label="Show sensitive data fields" >Show Data</button>
+
+                                <button id="hideScanBtn" class="atop-btn-white" role="button" tabindex="0" aria-pressed="false" aria-label="Show scanned document" data-controller="hide-scan" data-hide-scan-target="hideScanBtn" >Show Scan</button>
+
+                        </div>
                     </section>
                 </div>
             </div>
@@ -2198,8 +2223,8 @@
         const appText = 'ATO Protect'
 
         if(id){
-            appTitle.innerText = `${appText}: ${id}...`
-            document.title = `${appText}: ${id}...`
+            appTitle.innerText = `${appText}: ...${id}`
+            document.title = `${appText}: ...${id}`
         } else {
             appTitle.innerText = appText
             document.title = originalPageTitle
